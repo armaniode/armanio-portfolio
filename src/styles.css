@@ -101,7 +101,7 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 
 /* The portrait annotation is artwork: its width must scale with its type. */
 .framer-2LKcP .framer-678swx p {
-  white-space: nowrap;
+  white-space: normal;
   word-break: normal;
   overflow-wrap: normal;
 }
