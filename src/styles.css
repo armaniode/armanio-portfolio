@@ -35,7 +35,7 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 .framer-2LKcP .framer-1q7do70 { max-width: min(100%, 455px); }
 .framer-2LKcP .framer-1joh60d { max-width: min(100%, 895px); }
 .framer-2LKcP .framer-d6vvj5 { max-width: min(100%, 818px); }
-.framer-2LKcP .framer-678swx { max-width: min(100%, 52px); }
+.framer-2LKcP .framer-678swx { max-width: none; min-width: min-content; }
 .framer-2LKcP .framer-fgegxv { max-width: min(100%, 311px); }
 .framer-2LKcP .framer-q4z2k1,.framer-2LKcP .framer-mbhqtb,.framer-2LKcP .framer-1f34m5q { max-width: min(100%, 330px); }
 .framer-2LKcP .framer-q4fqr1,.framer-2LKcP .framer-1lm6we9,.framer-2LKcP .framer-7b9qtu,.framer-2LKcP .framer-uazuv1 { max-width: min(100%, 320px); }
@@ -80,4 +80,28 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
     line-height: 1.2;
     text-align: center;
   }
+}
+
+/* Cap complete text columns so sibling paragraphs retain the same measure. */
+.framer-2LKcP .framer-1s5vci5,
+.framer-2LKcP .framer-38oftw { max-width: min(100%, 330px); }
+.framer-2LKcP .framer-8tltpr,
+.framer-2LKcP .framer-15owi7y { max-width: min(100%, 320px); }
+.framer-2LKcP .framer-xxfild,
+.framer-2LKcP .framer-g1rdva {
+  max-width: min(100%, 334px);
+  align-items: flex-start;
+}
+.framer-2LKcP .framer-3cdbba,
+.framer-2LKcP .framer-1tiaun1,
+.framer-2LKcP .framer-1hb5n9z { max-width: min(100%, 300px); }
+.framer-2LKcP .framer-w2fklr { max-width: min(100%, 274px); }
+.framer-2LKcP .framer-jauyyv,
+.framer-2LKcP .framer-tnmoa3 { max-width: min(100%, 545px); }
+
+/* The portrait annotation is artwork: its width must scale with its type. */
+.framer-2LKcP .framer-678swx p {
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
 }
