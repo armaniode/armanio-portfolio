@@ -50,6 +50,9 @@ export default function App() {
     <main ref={content} className="framer-2LKcP framer-Jq33B framer-72rtr7" style={{minHeight:'100vh',width:'auto'}}>
       {sections.map((html,index) => <div className="section-mount" key={index} dangerouslySetInnerHTML={{__html:html}} />)}
     </main>
-    <div dangerouslySetInnerHTML={{__html:artwork}} />
+    <div className="portfolio-artwork" dangerouslySetInnerHTML={{__html:artwork}} />
+    <section className="coming-soon" aria-label="Portfolio coming soon">
+      <p>It’s in progress. Coming soon…</p>
+    </section>
   </>;
 }
