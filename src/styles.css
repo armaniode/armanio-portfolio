@@ -84,20 +84,20 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 
 /* Cap complete text columns so sibling paragraphs retain the same measure. */
 .framer-2LKcP .framer-1s5vci5,
-.framer-2LKcP .framer-38oftw { max-width: min(100%, 330px); }
+.framer-2LKcP .framer-38oftw { width: min(330px, calc(var(--layout-unit) * 330)); max-width: 100%; }
 .framer-2LKcP .framer-8tltpr,
-.framer-2LKcP .framer-15owi7y { max-width: min(100%, 320px); }
+.framer-2LKcP .framer-15owi7y { width: min(320px, calc(var(--layout-unit) * 320)); max-width: 100%; }
 .framer-2LKcP .framer-xxfild,
 .framer-2LKcP .framer-g1rdva {
-  max-width: min(100%, 334px);
+  width: min(334px, calc(var(--layout-unit) * 334)); max-width: 100%;
   align-items: flex-start;
 }
 .framer-2LKcP .framer-3cdbba,
 .framer-2LKcP .framer-1tiaun1,
-.framer-2LKcP .framer-1hb5n9z { max-width: min(100%, 300px); }
-.framer-2LKcP .framer-w2fklr { max-width: min(100%, 274px); }
+.framer-2LKcP .framer-1hb5n9z { width: min(300px, calc(var(--layout-unit) * 300)); max-width: 100%; }
+.framer-2LKcP .framer-w2fklr { width: min(274px, calc(var(--layout-unit) * 274)); max-width: 100%; }
 .framer-2LKcP .framer-jauyyv,
-.framer-2LKcP .framer-tnmoa3 { max-width: min(100%, 545px); }
+.framer-2LKcP .framer-tnmoa3 { width: min(545px, calc(var(--layout-unit) * 545)); max-width: 100%; }
 
 /* The portrait annotation is artwork: its width must scale with its type. */
 .framer-2LKcP .framer-678swx p {
