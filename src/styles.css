@@ -54,3 +54,30 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 .framer-2LKcP .framer-1x6yufz { max-width: min(100%, 334px); }
 .framer-2LKcP .framer-1w9j3qt { max-width: min(100%, 300px); }
 .framer-2LKcP .framer-uijkv { max-width: min(100%, 300px); }
+
+/* Tablet and mobile holding screen; desktop starts at the original 1280px breakpoint. */
+.coming-soon { display: none; }
+@media (max-width: 1279.98px) {
+  html { min-width: 0; }
+  body { margin: 0; }
+  #root > main, #root > .portfolio-artwork { display: none; }
+  .coming-soon {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px;
+    background: #fff;
+    color: #121212;
+  }
+  .coming-soon p {
+    margin: 0;
+    max-width: 100%;
+    font-family: "Just Me Again Down Here", sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
