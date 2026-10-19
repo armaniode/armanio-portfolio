@@ -1,0 +1,31 @@
+/* Project media keeps its fluid scale; typography and hero use a 1728px baseline. */
+:root {
+  --layout-unit: max(0.667328042px, 0.066137566cqw);
+  --reference-unit: max(0.583912037px, 0.0578703704cqw);
+  --type-unit: var(--reference-unit);
+  --text-unit: clamp(0.875px, 0.0578703704cqw, 1.25px);
+}
+.section-mount { display: contents; }
+html { min-width: 1009px; }
+body { background: #fff; container-type: inline-size; }
+a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
+[data-section="introduction"] img[alt="Arman Dikmedzhyan"],
+[data-section="footer"] img { visibility: visible !important; }
+/* 115px artwork below the phones + matching 20px caption inset. */
+.framer-2LKcP [data-section="beeline-roaming"] .framer-xxfild {
+  padding-bottom: calc(var(--layout-unit) * 135);
+}
+
+/* This narrow annotation scales as artwork, keeping whole words intact. */
+.framer-678swx { --text-unit: var(--layout-unit); }
+
+/* Align the footer caption with the portrait: 420px group offset + 8px inset. */
+.framer-2LKcP [data-section="footer"] .framer-1vioxwu {
+  top: calc(var(--layout-unit) * 428);
+}
+
+/* At 1728px these match the original site's button, portrait and hero sizes. */
+[data-section="contact-navigation"],
+[data-section="introduction"] {
+  --layout-unit: var(--reference-unit);
+}
