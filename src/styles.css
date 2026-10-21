@@ -167,3 +167,16 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 .framer-2LKcP [data-section="tele2-introduction"] .framer-1v3s5hb {
   padding-left: min(240px, calc(var(--reference-unit) * 240));
 }
+
+/* Board-game copy follows the same column width as the screen directly below. */
+.framer-2LKcP [data-section="beeline-board-game"] .framer-w2fklr {
+  width: calc(var(--layout-unit) * 284);
+}
+.framer-2LKcP [data-section="beeline-board-game"] .framer-iipsvt {
+  gap: calc(var(--layout-unit) * 100);
+}
+.framer-2LKcP [data-section="beeline-board-game"] .framer-b31545,
+.framer-2LKcP [data-section="beeline-board-game"] .framer-3bh3mh {
+  width: 100%;
+  max-width: 100%;
+}
