@@ -144,3 +144,12 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 .framer-2LKcP [data-section="footer"] .framer-1vioxwu {
   top: calc(var(--reference-unit) * 420 + var(--layout-unit) * 8);
 }
+
+/* Align showreel paragraphs by their first line, regardless of text height. */
+.framer-2LKcP [data-section="beeline-showreel"] .framer-11qg9uf {
+  align-items: flex-start;
+}
+/* Add a little breathing room between the impact list and the complete footer block. */
+.framer-2LKcP [data-section="footer"] {
+  margin-top: calc(var(--reference-unit) * 48);
+}
