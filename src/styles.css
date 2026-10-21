@@ -112,3 +112,35 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
   width: min(300px, calc(var(--layout-unit) * 300));
   max-width: 100%;
 }
+
+/* Match visible text widths in nested layout wrappers, preserving original row gaps. */
+.framer-2LKcP [data-section="beeline-gaming-portal"] .framer-iltf5 {
+  width: min(300px, calc(var(--layout-unit) * 300));
+  max-width: 100%;
+}
+.framer-2LKcP [data-section="beeline-feedback"] .framer-vkrhjv {
+  width: min(334px, calc(var(--layout-unit) * 334));
+  max-width: 100%;
+  justify-content: flex-start;
+}
+.framer-2LKcP .framer-11wy2uh,
+.framer-2LKcP .framer-1fmajuf {
+  width: min(393px, calc(var(--layout-unit) * 393));
+  max-width: 100%;
+}
+
+/* Let the impact list end with its text, rather than leaving an oversized fixed box. */
+.framer-2LKcP [data-section="tele2-impact"] .framer-11oglis {
+  height: auto;
+}
+/* Footer vertical spacing follows the 1728px reference, like the typography. */
+.framer-2LKcP [data-section="footer"] {
+  height: calc(var(--reference-unit) * 913);
+}
+.framer-2LKcP [data-section="footer"] .framer-5hjssn,
+.framer-2LKcP [data-section="footer"] .framer-tksrpd {
+  top: calc(var(--reference-unit) * 420);
+}
+.framer-2LKcP [data-section="footer"] .framer-1vioxwu {
+  top: calc(var(--reference-unit) * 420 + var(--layout-unit) * 8);
+}
