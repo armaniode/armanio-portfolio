@@ -21,6 +21,11 @@ export function polishText(html) {
   const repairs = { 'combi-ned': 'combined', 'develo-pers': 'developers', 'minu-tes': 'minutes', 'ques-tions': 'questions', 'exe-cutive': 'executive', 'toge-ther': 'together' };
   return html.split(/(<[^>]+>)/g).map(part => {
     if (part.startsWith('<')) return part;
+    // These narrow paragraphs read better without stray conjunctions or legacy line separators.
+    if (/^(The referral program connects|As Lead Product Designer|We designed an in-context survey)/.test(part.trim())) {
+      part = part.replace(/[\u2028\u2029]+/g, ' ')
+        .replace(/(?<![\w-])(I|and|or) +(?=[A-Za-z])/g, '$1\u00a0');
+    }
     return part
       .replace(/\b(?:combi-ned|develo-pers|minu-tes|ques-tions|exe-cutive|toge-ther)\b/g, word => repairs[word])
       .replace(/(?<![\w-])(a|an|the|in|on|at|to|of|for|by|as|with|from|into|over) +(?!&)(?=[A-Za-z0-9])/gi, '$1\u00a0');
