@@ -9,9 +9,20 @@ export function fluidValue(value, property = '') {
   });
 }
 export function fluidSection(html) {
-  return html.replace(/style=("[^"]*"|'[^']*')/g, (attribute, quoted) => {
+  return polishText(html.replace(/style=("[^"]*"|'[^']*')/g, (attribute, quoted) => {
     const quote = quoted[0];
     const css = quoted.slice(1, -1).replace(/([\w-]+):([^;]+)/g, (_, property, value) => `${property}:${fluidValue(value, property)}`);
     return `style=${quote}${css}${quote}`;
-  }).replace(/<br\b[^>]*>/gi, ' ');
+  }).replace(/<br\b[^>]*>/gi, ' '));
+}
+
+// Format text nodes only; leave attributes, URLs and intentional compound words untouched.
+export function polishText(html) {
+  const repairs = { 'combi-ned': 'combined', 'develo-pers': 'developers', 'minu-tes': 'minutes', 'ques-tions': 'questions', 'exe-cutive': 'executive', 'toge-ther': 'together' };
+  return html.split(/(<[^>]+>)/g).map(part => {
+    if (part.startsWith('<')) return part;
+    return part
+      .replace(/\b(?:combi-ned|develo-pers|minu-tes|ques-tions|exe-cutive|toge-ther)\b/g, word => repairs[word])
+      .replace(/(?<![\w-])(a|an|the|in|on|at|to|of|for|by|as|with|from|into|over) +(?!&)(?=[A-Za-z0-9])/gi, '$1\u00a0');
+  }).join('');
 }
