@@ -194,3 +194,12 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
   -webkit-hyphens: none;
   hyphens: none;
 }
+
+/* Keep complete words and distribute lines more evenly in these narrow descriptions. */
+.framer-2LKcP .framer-l71x2g p.framer-text,
+.framer-2LKcP .framer-q4fqr1 p.framer-text,
+.framer-2LKcP .framer-x6ncaj p.framer-text {
+  -webkit-hyphens: none;
+  hyphens: none;
+  text-wrap: balance;
+}
