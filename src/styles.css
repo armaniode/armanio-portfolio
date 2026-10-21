@@ -106,3 +106,9 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
   word-break: normal;
   overflow-wrap: normal;
 }
+
+/* Keep the referral text wrapper as narrow as its capped text, so only the row gap remains. */
+.framer-2LKcP [data-section="beeline-referral"] .framer-1kedki {
+  width: min(300px, calc(var(--layout-unit) * 300));
+  max-width: 100%;
+}
