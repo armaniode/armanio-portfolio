@@ -216,10 +216,10 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 
 /* Reduce the decorative gaming illustrations without shifting nearby content. */
 .framer-2LKcP [data-section="beeline-gaming-portal"] .framer-ly4wpu > .svgContainer {
-  transform: scale(0.85);
+  transform: scale(0.925);
   transform-origin: left bottom;
 }
 .framer-2LKcP [data-section="beeline-board-game"] .framer-1ynzon1 > .svgContainer {
-  transform: scale(0.85);
+  transform: scale(0.925);
   transform-origin: center;
 }
