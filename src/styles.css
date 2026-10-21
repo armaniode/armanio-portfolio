@@ -3,7 +3,8 @@
   --layout-unit: max(0.667328042px, 0.066137566cqw);
   --reference-unit: max(0.583912037px, 0.0578703704cqw);
   --type-unit: var(--reference-unit);
-  --text-unit: clamp(0.875px, 0.0578703704cqw, 1.25px);
+  /* Body text stops growing when the original desktop text measures reach their cap. */
+  --text-unit: clamp(0.875px, 0.0578703704cqw, 1px);
 }
 .section-mount { display: contents; }
 html { min-width: 1009px; }
