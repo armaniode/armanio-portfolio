@@ -159,3 +159,10 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 .framer-2LKcP [data-section="tele2-introduction"] {
   padding-top: calc(var(--layout-unit) * 370);
 }
+
+/* Preserve the original text-column inset instead of enlarging it with project media. */
+.framer-2LKcP [data-section="beeline-showreel"] .framer-11qg9uf,
+.framer-2LKcP [data-section="constructly-introduction"] .framer-1pj3ajw,
+.framer-2LKcP [data-section="tele2-introduction"] .framer-1v3s5hb {
+  padding-left: min(240px, calc(var(--reference-unit) * 240));
+}
