@@ -180,3 +180,17 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
   width: 100%;
   max-width: 100%;
 }
+
+/* Natural paragraph wrapping and language-aware discretionary hyphenation. */
+.framer-2LKcP p.framer-text {
+  word-break: normal;
+  overflow-wrap: normal;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+  text-wrap: pretty;
+}
+.framer-2LKcP .framer-678swx p {
+  -webkit-hyphens: none;
+  hyphens: none;
+}
