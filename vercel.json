@@ -2,5 +2,15 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
   "buildCommand": "npm run build:vercel",
-  "outputDirectory": "dist/client"
+  "outputDirectory": "dist/client",
+  "rewrites": [
+    {
+      "source": "/constructly",
+      "destination": "/case-studies/constructly.html"
+    },
+    {
+      "source": "/tele2",
+      "destination": "/case-studies/tele2.html"
+    }
+  ]
 }
