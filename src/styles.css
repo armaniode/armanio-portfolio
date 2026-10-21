@@ -203,3 +203,8 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
   hyphens: none;
   text-wrap: balance;
 }
+
+/* Match the project image gutter while retaining the header button scale. */
+.framer-2LKcP [data-section="contact-navigation"] .framer-1kwliq4 {
+  padding-left: max(13.34656084px, 1.322751323cqw);
+}
