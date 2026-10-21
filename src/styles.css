@@ -208,3 +208,8 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 3px; }
 .framer-2LKcP [data-section="contact-navigation"] .framer-1kwliq4 {
   padding-left: max(13.34656084px, 1.322751323cqw);
 }
+
+/* Keep the hero type at its reference size once its text measure is capped. */
+.framer-2LKcP [data-section="introduction"] .framer-d6vvj5 {
+  --type-unit: min(1px, var(--reference-unit));
+}
