@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import artwork from './artwork.html?raw';
 import './fluid-layout.css';
 import { fluidSection } from '../scripts/fluid-values.mjs';
@@ -34,6 +34,38 @@ const sections = [section0,section1,section2,section3,section4,section5,section6
 
 export default function App() {
   const content = useRef(null);
+  useLayoutEffect(() => {
+    const projects = { '/constructly': 'name2', '/tele2': 'name3' };
+    const scrollToSection = () => {
+      const id = window.location.hash.slice(1);
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    };
+    // React mounts after fonts load, so native fragment navigation happens too early.
+    scrollToSection();
+    const onPageShow = (event) => {
+      if (event.persisted) scrollToSection();
+    };
+    const rememberProject = (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target.closest('a[href]');
+      if (!link || link.target === '_blank') return;
+      const url = new URL(link.href, window.location.href);
+      const id = url.origin === window.location.origin && projects[url.pathname];
+      if (id) {
+        // Browser Back should return to the project's introduction as well.
+        history.replaceState(history.state, '', window.location.pathname + window.location.search + '#' + id);
+      }
+    };
+    window.addEventListener('hashchange', scrollToSection);
+    window.addEventListener('pageshow', onPageShow);
+    document.addEventListener('click', rememberProject);
+    return () => {
+      window.removeEventListener('hashchange', scrollToSection);
+      window.removeEventListener('pageshow', onPageShow);
+      document.removeEventListener('click', rememberProject);
+    };
+  }, []);
   useEffect(() => {
     const videos = [...content.current.querySelectorAll('video')];
     const observer = new IntersectionObserver(entries => {
