@@ -7,3 +7,12 @@ a:focus-visible { outline: 2px solid #121212; outline-offset: 4px; }
   .case-coming-soon { display: grid; place-items: center; min-height: 100vh; min-height: 100dvh; box-sizing: border-box; padding: 24px; background: #fff; color: #121212; }
   .case-coming-soon p { margin: 0; font-family: "Just Me Again Down Here", sans-serif; font-size: 48px; font-weight: 400; line-height: 1.2; text-align: center; }
 }
+
+/* Case-study copy keeps a 600px measure at 1728px, and narrows on smaller desktops. */
+@media (min-width: 1280px) {
+.framer-sJBzq .framer-ix02bg,.framer-sJBzq .framer-h008sw,.framer-sJBzq .framer-1osjvm2,.framer-sJBzq .framer-ccnvhz,.framer-sJBzq .framer-1ybgrvv,.framer-sJBzq .framer-1wtvh7f,.framer-sJBzq .framer-impakd,.framer-sJBzq .framer-16n23t8,.framer-sJBzq .framer-1rpyxix,.framer-sJBzq .framer-1j5wxg1,.framer-sJBzq .framer-1xy1fy,.framer-sJBzq .framer-10iccw9,.framer-sJBzq .framer-cwd34i,
+.framer-0hfZp .framer-16n6gyx,.framer-0hfZp .framer-1ftbva6,.framer-0hfZp .framer-3o5grv,.framer-0hfZp .framer-1u8c67j,.framer-0hfZp .framer-15n4vix,.framer-0hfZp .framer-1qs6v7g,.framer-0hfZp .framer-t3gl7h,.framer-0hfZp .framer-1cvcg7,.framer-0hfZp .framer-s1rc86,.framer-0hfZp .framer-162mvr4,.framer-0hfZp .framer-zogjba,.framer-0hfZp .framer-3umald,.framer-0hfZp .framer-1f56772,
+.framer-0hfZp .framer-pala3p,.framer-0hfZp .framer-8hmm3e {
+  max-width: min(600px, 34.722222vw);
+}
+}
