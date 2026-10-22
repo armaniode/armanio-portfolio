@@ -5,6 +5,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+<link rel="preload" href="/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/7lw0VWkeXrGYJT05oB3DsFy8BaY.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/MwQmbgXtz-Wc6RUEGNMc0QpRrfUh2hSdBBMoAtwAtKE.woff2" as="font" type="font/woff2" crossorigin>
 	
 	<title>Tele2 — Arman Dikmedzhyan</title>
     <link rel="canonical" href="https://armanio-portfolio.vercel.app/tele2"><meta property="og:url" content="https://armanio-portfolio.vercel.app/tele2"><meta name="description" content="Design Portfolio">
@@ -69,6 +72,32 @@
 	
 <link rel="stylesheet" href="/case-studies/shared.css">
 <script defer src="/case-studies/shared.js"></script>
+<style>
+html.case-fonts-loading body { visibility: hidden; }
+html.case-fonts-fallback body, html.case-fonts-fallback body * { font-family: Arial, sans-serif !important; }
+</style>
+<script>
+(() => {
+  if (!document.fonts) return;
+  const root = document.documentElement;
+  root.classList.add('case-fonts-loading');
+  let finished = false;
+  const reveal = (loaded) => {
+    if (finished) return;
+    finished = true;
+    clearTimeout(timeout);
+    // Keep a stable fallback if fonts fail or the connection stalls.
+    if (!loaded) root.classList.add('case-fonts-fallback');
+    root.classList.remove('case-fonts-loading');
+  };
+  const timeout = setTimeout(() => reveal(false), 5000);
+  Promise.all([
+    document.fonts.load('400 18px "Inter"'),
+    document.fonts.load('400 18px "Inter Variable"'),
+    document.fonts.load('400 48px "Just Me Again Down Here"')
+  ]).then(() => document.fonts.ready).then(() => reveal(true), () => reveal(false));
+})();
+</script>
 </head>
 <body>
 	
