@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import artwork from './artwork.html?raw';
+import { deferMedia, setupMediaLoading } from './media-loading.js';
 import './fluid-layout.css';
 import { fluidSection } from '../scripts/fluid-values.mjs';
 import './styles.css';
@@ -30,7 +31,7 @@ import section23 from './sections/tele2-screens.html?raw';
 import section24 from './sections/tele2-impact.html?raw';
 import section25 from './sections/footer.html?raw';
 
-const sections = [section0,section1,section2,section3,section4,section5,section6,section7,section8,section9,section10,section11,section12,section13,section14,section15,section16,section17,section18,section19,section20,section21,section22,section23,section24,section25].map(fluidSection);
+const sections = [section0,section1,section2,section3,section4,section5,section6,section7,section8,section9,section10,section11,section12,section13,section14,section15,section16,section17,section18,section19,section20,section21,section22,section23,section24,section25].map(html => deferMedia(fluidSection(html)));
 
 export default function App() {
   const content = useRef(null);
@@ -66,18 +67,7 @@ export default function App() {
       document.removeEventListener('click', rememberProject);
     };
   }, []);
-  useEffect(() => {
-    const videos = [...content.current.querySelectorAll('video')];
-    const observer = new IntersectionObserver(entries => {
-      for (const {target, isIntersecting} of entries) {
-        target.muted = true;
-        if (isIntersecting) target.play().catch(() => {});
-        else target.pause();
-      }
-    }, {rootMargin: '150px 0px', threshold: 0.01});
-    videos.forEach(video => observer.observe(video));
-    return () => { observer.disconnect(); videos.forEach(video => video.pause()); };
-  }, []);
+  useEffect(() => setupMediaLoading(content.current), []);
   return <>
     <main ref={content} className="framer-2LKcP framer-Jq33B framer-72rtr7" style={{minHeight:'100vh',width:'auto'}}>
       {sections.map((html,index) => <div className="section-mount" key={index} dangerouslySetInnerHTML={{__html:html}} />)}
